@@ -7,7 +7,6 @@
     - Wallet Class  
        This class allows users to create a new wallet and returns the user's private and public keys
     - CryptoBlock
-        
     - CryptoChain
     - 
     
@@ -18,8 +17,7 @@
 3. Run 'npm start'
 4. Go to browser, run localhost:3000
 5. Click 'Connect" to generate the public and private key
-6. The "wallet address of the receiver" could be "12wrvdieifbowfwnkwnd6yi"
-7. 
+6. The "wallet address of the receiver" could be "12ehuwrvdieifbowfwnkwnd6yi"
 
 
 # Tools, Languages and Frameworks used
