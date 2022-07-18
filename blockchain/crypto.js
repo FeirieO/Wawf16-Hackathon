@@ -157,7 +157,7 @@ class CryptoBlockchain{
 //module.exports = CryptoBlock
 const Wawf16Coin = new CryptoBlockchain();
 const cBlock = new CryptoBlock();
-console.log("WWWF16Coin has started Mining!")
+console.log("WAWF16Coin has started Mining!")
 module.exports = {
     Wallet,
     CryptoBlockchain,
