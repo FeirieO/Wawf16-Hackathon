@@ -1,4 +1,4 @@
-# WWAF Coin  
+# WAWF Coin  
    This is a new blockchain
 # BlockChain Folder
     This contains the crypto.js that holds the functions for building WWAF coin. it has the following functionalities:
