@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    if(!key)
+        h1 No access. Please Connect Wallet 
+    else
+        h3(style={"text-align": "center", "margin-top": "5%"}) Public Key: !{key}
+        h3(style={"text-align": "center"}) Balance: !{balance}
+        br
+        div
+            .row
+                .col-md-4
+                .col-md-4
+                    input(class="form-control" placeholder="Enter Wallet Address of Receiver" style={"margin-top":"10px","margin-right": "10px"}, id="receiver" name="receiver")
+                .col-md-4
+            .row
+                .col-md-4
+                .col-md-4
+                    input(class="form-control" placeholder="Enter Your Private Key" style={"margin-top":"10px","margin-right": "10px"}, id="sender" name="sender")
+                .col-md-4
+            .row
+                .col-md-4
+                .col-md-4
+                    input(class="form-control" placeholder="Enter Amount" style={"margin-top":"10px","margin-right": "10px"}, id="amount" name="amount")
+                .col-md-4
+            .row
+                .col-md-4
+                .col-md-4
+                    a(href=`javascript:sendCoin()` style={"color":"white", "width":"100%", "margin-top":"20px"} class="btn btn-primary float-right") Send WAWF16 Coin
+                .col-md-4
+
+block scripts
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.bundle.min.js')
+    script.
+        function sendCoin(){
+            var data = {receiverPublicKey: $("#receiver").val(), senderPrivateKey: $("#sender").val(), amount: $("#amount").val()};
+            $.ajax({
+                dataType: "json",
+                type: 'post',
+                url: '/sendCoin',
+                data: data,
+            })
+            .done(function(e){
+                alert(e);
+            });
+        }

@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    if(!msg)
+        h1(style={"text-align": "center"}) Please Connect Wallet
+        br
+    else
+        h1(style={"margin-top":"5%","text-align": "center"}) WWAF Coin Drop
+        p(style={"text-align": "center"}) Please Specify the number of coins to drop 
+        div
+            .row
+                .col-md-4
+                .col-md-4
+                    input(class="form-control" placeholder="Enter Number of Coins" style={"margin-top":"10px","margin-right": "10px"}, id="coins" name="coins")
+                .col-md-4
+            .row
+                .col-md-4
+                .col-md-4
+                    a(href=`javascript:drop()` style={"color":"white", "width":"100%", "margin-top":"20px"} class="btn btn-primary float-right") Drop
+                .col-md-4
+
+
+
+block scripts
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.bundle.min.js')
+    script.
+        function drop(){
+            var data = {coins: $("#coins").val()};
+            $.ajax({
+                dataType: "json",
+                type: 'post',
+                url: '/drop',
+                data: data,
+            })
+            .done(function(e){
+                //$('.ress').html(e);
+            });
+        }

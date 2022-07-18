@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1(style={"margin-top":"5%","text-align": "center"}) WWAF16 Coin
+  p(style={"text-align": "center"}) Please Create or Connect a Wallet 
+  div
+    .row
+      .col-md-4
+      .col-md-4
+          input(class="form-control" placeholder="Enter Wallet Address" style={"margin-top":"10px","margin-right": "10px"}, id="addr" name="addr")
+      .col-md-4
+    .row
+      .col-md-4
+      .col-md-4
+          a(href=`javascript:connect()` style={"color":"white", "width":"100%", "margin-top":"20px"} class="btn btn-primary float-right") Connect
+      .col-md-4
+  h1(style={"margin":"1%","text-align": "center"}) OR
+          
+    .row
+      .col-md-4
+      .col-md-4
+          a(href="/create" style={"color":"white", "width":"100%", "margin-top":"20px" } class="btn btn-primary float-right") Create
+      .col-md-4
+
+  div(id="user")
+
+block scripts
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.bundle.min.js')
+    script.
+        function connect(){
+            var data = {publicKey: $("#addr").val()};
+            $.ajax({
+                dataType: "json",
+                type: 'post',
+                url: '/connect',
+                data: data,
+            })
+            .done(function(e){
+                //$('.ress').html(e);
+            });
+        }

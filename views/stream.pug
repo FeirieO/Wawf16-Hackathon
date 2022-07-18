@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    if(!songs)
+        h1(style={"text-align": "center"}) No Songs Available
+        br
+        
+    else
+        h3(style={"text-align": "center"})  Songs Available
+        br
+        h3(style={"text-align": "center"}) Your WAWF16 Coin Balance: !{balance}
+        - for(song of songs)
+            hr
+            div(style={"margin":"1%"})
+                .row
+                    .col-md-6
+                        h3(style={"text-align": "center"})  Song Name: !{song.name}
+                    .col-md-6
+                        h3(style={"text-align": "center"})  Cost: !{song.cost} WAWF16 Tokens
+                .row
+                    .col-md-2
+                    .col-md-8
+                        input(class="form-control" placeholder="Enter Your Private Key" style={"margin-top":"10px","margin-right": "10px"}, id="sendp" name="sendp")
+                    .col-md-2
+                .row
+                    .col-md-4
+                    .col-md-4
+                        a(href=`javascript:stream(${song.cost},"${song.musiclink}", "${song.musicianPublicKey}")` style={"color":"white", "width":"100%", "margin-top":"20px"} class="btn btn-primary float-right") Stream
+                    .col-md-4
+
+block scripts
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/bootstrap/js/bootstrap.bundle.min.js')
+    script.
+        function stream(cost, musiclink, musicianPublicKey, pk){
+            var data = {cost: `${cost}`, musicLink: musiclink, mPublickey: musicianPublicKey, privateKey: $("#sendp").val()};
+            $.ajax({
+                dataType: "json",
+                type: 'post',
+                url: '/stream',
+                data: data,
+            })
+            .done(function(e){
+                window.location.replace(musiclink);
+            });
+        }
+        

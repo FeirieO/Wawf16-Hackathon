@@ -1,0 +1,20 @@
+[
+    {
+        "name" : "con calma",
+        "musiclink": "https://www.youtube.com/watch?v=DiItGE3eAyQ",
+        "musicianPublicKey": "0418f68bba71b2dde142377e25a0c4473914f4fe0236a2f7ca76303cc104e70a442d5a23899e1508b4a1da3ce76d267d6953fa0ae62ecf28aa0a6f083a30ec6d09",
+        "cost": 1
+    },
+    {
+        "name" : "Skelewu",
+        "musiclink": "https://www.youtube.com/watch?v=sqflXTvth3s",
+        "musicianPublicKey": "0418f68bba71b2dde142377e25a0c4473914f4fe0236a2f7ca76303cc104e70a442d5a23899e1508b4a1da3ce76d267d6953fa0ae62ecf28aa0a6f083a30ec6d09",
+        "cost": 5
+    },
+    {
+        "name" : "Buga",
+        "musiclink": "https://www.youtube.com/watch?v=bLF90M96m2Q",
+        "musicianPublicKey": "0418f68bba71b2dde142377e25a0c4473914f4fe0236a2f7ca76303cc104e70a442d5a23899e1508b4a1da3ce76d267d6953fa0ae62ecf28aa0a6f083a30ec6d09",
+        "cost": 10
+    }
+]

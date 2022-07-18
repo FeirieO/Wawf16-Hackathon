@@ -1,0 +1,37 @@
+//module.exports = WAWF16Coin
+/* WAWF16Coin.createTransaction(new Transaction(50, "address1", "address2"));
+WAWF16Coin.createTransaction(new Transaction(20, "address2", "address3"));
+console.log("WAWF16Coin mining in progress.....")
+WAWF16Coin.addNewBlock("owner-address");
+console.log('\nBalance of owner is: ', Wawf16Coin.getBalanceOfAddress("owner-address"))
+Wawf16Coin.addNewBlock("owner-address");
+console.log('\nBalance of owner is: ', Wawf16Coin.getBalanceOfAddress("owner-address"))
+Wawf16Coin.addNewBlock("owner-address");
+console.log('\nBalance of owner is: ', Wawf16Coin.getBalanceOfAddress("owner-address"))
+console.log(JSON.stringify(Wawf16Coin, null, 4));  */
+/* let favour = new Wallet()
+favour.walletLog(); */
+/* const myKey = ec.keyFromPrivate("69a40e1c46ff9cfecd8c8bc6cce55ca511e9cf2d6d499fc153e22f4f9f783079")
+const myWalletAddress = myKey.getPublic('hex')
+const transaction1 = new Transaction(50, myWalletAddress, "somebody")
+transaction1.signTransaction(myKey)
+Wawf16Coin.addTransaction(transaction1);
+Wawf16Coin.addNewBlock(myWalletAddress);
+console.log('\nBalance of favour is: ', Wawf16Coin.getBalanceOfAddress(myWalletAddress))
+console.log(JSON.stringify(Wawf16Coin, null, 4));   */
+
+/* addNewBlock(miningRewardAddress, transaction){ // same as mining function
+        let newBlock = new CryptoBlock(Date.now(), transaction)
+        newBlock.precedingHash = this.obtainLatestBlock().hash;
+        //newBlock.hash = newBlock.computeHash();    
+        newBlock.proofOfWork(this.difficulty);
+        console.log("Block mined")    
+        this.blockchain.push(newBlock);
+        const minerR = new Transaction(this.miningReward, null, miningRewardAddress)
+        let minerBlock = new CryptoBlock(Date.now(), minerR)
+        minerBlock.precedingHash = this.obtainLatestBlock().hash;
+        //newBlock.hash = newBlock.computeHash();    
+        minerBlock.proofOfWork(this.difficulty);
+        console.log("miner Rewarded")    
+        this.blockchain.push(minerBlock);
+    } */
