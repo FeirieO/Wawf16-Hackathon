@@ -17,6 +17,9 @@
 2. cd to the blockchain directory and cd ..
 3. Run 'npm start'
 4. Go to browser, run localhost:3000
+5. Click 'Connect" to generate the public and private key
+6. The "wallet address of the receiver" could be "12wrvdieifbowfwnkwnd6yi"
+7. 
 
 
 # Tools, Languages and Frameworks used
